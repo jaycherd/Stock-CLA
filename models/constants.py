@@ -1,0 +1,1 @@
+CHSR_COL_WIDTH = 24
