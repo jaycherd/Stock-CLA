@@ -1,5 +1,6 @@
 # Stock-CLA
-appStrxr/
+## Project Strxr/
+```plaintext
     ├── main.py
     ├── models/         #holding class objects
     │   ├── nothingyet...
@@ -14,3 +15,4 @@ appStrxr/
     └── tests/
         ├── nothingyet...
         └── nothingyet...
+```
