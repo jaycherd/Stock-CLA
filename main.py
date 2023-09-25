@@ -1,4 +1,5 @@
 from models.chooser_frame import ChooserFrame
+from models.home_frame import HomeFrame
 
 
 
@@ -7,8 +8,12 @@ from models.chooser_frame import ChooserFrame
 
 
 def main():
-    chooser_frame = ChooserFrame()
-    chooser_frame.draw()
+    home_frame = HomeFrame()
+    if home_frame.viewstks_flag:
+        chooser_frame = ChooserFrame()
+        chooser_frame.draw()
+    exit()
+    
 
 
 

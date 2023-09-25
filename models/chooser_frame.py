@@ -6,7 +6,7 @@ from models.utils import create_plots
 
 class ChooserFrame(MyFrame): # inherits from MyFrame
     def __init__(self,title="Stock Chooser",geometry=""):
-        super().__init__(title=title,geometry=geometry)
+        super().__init__(title=title,geometry="")
         self.sym_var = tk.StringVar()
 
 
@@ -14,7 +14,7 @@ class ChooserFrame(MyFrame): # inherits from MyFrame
         tmptxt = "Enter Stock Symbol"
         tmptxt_formatted = tmptxt.ljust(constants.CHSR_COL_WIDTH)
         lbl = tk.Label(self.root, text=tmptxt_formatted, font = ("Arial",12))
-        lbl.grid(column = 0, row = 0)
+        lbl.grid(column = 0, row = 0,padx=10,pady=10)
         # get input using entry class
         sym_entry = tk.Entry(self.root, textvariable=self.sym_var, width=constants.CHSR_COL_WIDTH)
         # use the grid function as usual to add it to the window
