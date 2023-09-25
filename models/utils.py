@@ -62,7 +62,7 @@ def generate_chart_data(symbol,starts,end_date) -> List[int]:
     return data_arr
 
 #1yr, 3yr, 5yr, 10yr
-def create_longterm_plots(symbol):
+def create_plots(symbol):
     titles = [f"{symbol} 1 YR",f"{symbol} 3 YR", f"{symbol} 5 YR", f"{symbol} 10 YR"]
     starts = generate_dates([365, 365*3, 365*5, 365*10])
     end_date,end_date_num = get_specific_date(num_days_ago=0)
@@ -96,24 +96,24 @@ def create_longterm_plots(symbol):
     plt.tight_layout()
     plt.show()
 
-def create_medterm_plots(symbol):
-    titles = [f"{symbol} 5 DAYS",f"{symbol} 10 DAYS", f"{symbol} 1 MONTH", f"{symbol} 6 MONTH"]
-    starts = generate_dates([5,10,30,185])
-    end_date,end_date_num = get_specific_date(num_days_ago=0)
-    fig, axs = plt.subplots(2,2,figsize=(12,8))
-    stock_data_arr = generate_chart_data(symbol,starts,end_date)
-    counter = 0
-    for i in range(2):
-        for j in range(2):
-            axs[i,j].plot(stock_data_arr[counter]['Close'], label='Close Price')
-            axs[i,j].tick_params(labelrotation=45)
-            axs[i,j].set_title(titles[counter])
-            axs[i,j].set_xlabel('Date')
-            axs[i,j].set_ylabel('Close Price (USD)')
-            xtick_locs = axs[i,j].get_xticks()
-            ymin,ymax = axs[i,j].get_ylim()
-            axs[i,j].vlines(x=xtick_locs,ymin=ymin,ymax=ymax, color='#D3D3D3', linestyles='dashed', alpha=0.5)
-            counter += 1
+# def create_medterm_plots(symbol):
+#     titles = [f"{symbol} 5 DAYS",f"{symbol} 10 DAYS", f"{symbol} 1 MONTH", f"{symbol} 6 MONTH"]
+#     starts = generate_dates([5,10,30,185])
+#     end_date,end_date_num = get_specific_date(num_days_ago=0)
+#     fig, axs = plt.subplots(2,2,figsize=(12,8))
+#     stock_data_arr = generate_chart_data(symbol,starts,end_date)
+#     counter = 0
+#     for i in range(2):
+#         for j in range(2):
+#             axs[i,j].plot(stock_data_arr[counter]['Close'], label='Close Price')
+#             axs[i,j].tick_params(labelrotation=45)
+#             axs[i,j].set_title(titles[counter])
+#             axs[i,j].set_xlabel('Date')
+#             axs[i,j].set_ylabel('Close Price (USD)')
+#             xtick_locs = axs[i,j].get_xticks()
+#             ymin,ymax = axs[i,j].get_ylim()
+#             axs[i,j].vlines(x=xtick_locs,ymin=ymin,ymax=ymax, color='#D3D3D3', linestyles='dashed', alpha=0.5)
+#             counter += 1
 
-    plt.tight_layout()
-    plt.show()
+#     plt.tight_layout()
+#     plt.show()

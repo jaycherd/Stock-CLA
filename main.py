@@ -1,4 +1,4 @@
-from models import my_frames
+from models.chooser_frame import ChooserFrame
 
 
 
@@ -7,7 +7,7 @@ from models import my_frames
 
 
 def main():
-    chooser_frame = my_frames.ChooserFrame()
+    chooser_frame = ChooserFrame()
     chooser_frame.draw()
 
 
